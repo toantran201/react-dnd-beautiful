@@ -1,0 +1,13 @@
+.container{
+    margin: 24px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.title{
+    padding: 8px;
+}
+
+.taskListContainer {
+    padding: 8px;
+}
