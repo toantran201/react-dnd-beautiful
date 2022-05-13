@@ -6,7 +6,16 @@ import {DragDropContext} from "react-beautiful-dnd";
 function App() {
     const [state, setState] = React.useState(initialData)
 
+    const onDragStart = () => {
+        document.body.style.color = 'orange'
+    }
+
+    const onDragUpdate = () => {
+
+    }
+
     const onDragEnd = (result) => {
+        document.body.style.color = 'inherit'
         const {destination, source, draggableId} = result
         if(!destination){
             return
@@ -42,6 +51,8 @@ function App() {
     return (
         <DragDropContext
             onDragEnd={onDragEnd}
+            onDragStart={onDragStart}
+            onDragUpdate={onDragUpdate}
         >
             {
                 state.columnOrder.map((columnId) => {

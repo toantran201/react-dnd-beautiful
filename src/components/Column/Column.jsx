@@ -1,15 +1,16 @@
 import styles from './style.module.css'
 import Task from "../Task/Task";
 import {Droppable} from "react-beautiful-dnd";
+import classNames from "classnames";
 
 const Column = ({column, tasks}) => {
     return (
         <div className={styles.container}>
             <h3 className={styles.title}>{column.title}</h3>
             <Droppable droppableId={column.id}>
-                {(provided) => (
+                {(provided, snapshot) => (
                     <div
-                        className={styles.taskListContainer}
+                        className={classNames(styles.taskListContainer, snapshot.isDraggingOver ? styles.isDraggingOver : "")}
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                     >

@@ -11,3 +11,7 @@
 .taskListContainer {
     padding: 8px;
 }
+
+.isDraggingOver {
+    background: lightpink;
+}

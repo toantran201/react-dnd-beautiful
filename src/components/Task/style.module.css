@@ -3,5 +3,22 @@
     padding: 8px;
     margin-bottom: 8px;
     border-radius: 4px;
+    display: flex;
+}
+
+.normal{
     background: white;
+}
+
+.onDrag{
+    background: hotpink;
+    color: white;
+}
+
+.handler{
+    width: 20px;
+    background: orange;
+    margin-right: 20px;
+    border-radius: 4px;
+    border: 1px dotted;
 }

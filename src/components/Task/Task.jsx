@@ -1,16 +1,18 @@
 import styles from './style.module.css'
 import {Draggable} from "react-beautiful-dnd";
+import classNames from "classnames";
 
 const Task = ({task, index}) => {
     return (
         <Draggable draggableId={task.id} index={index}>
-            {provided => (
+            {(provided, snapshot) => (
                 <div
                     ref={provided.innerRef}
-                    className={styles.container}
+                    className={classNames(styles.container, snapshot.isDragging ? styles.onDrag : styles.normal)}
                     {...provided.draggableProps}
-                    {...provided.dragHandleProps}
                 >
+                    <div className={styles.handler}
+                         {...provided.dragHandleProps}/>
                     {task.content}
                 </div>
             )}
